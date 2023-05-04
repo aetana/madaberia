@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import agritech.madaberia.domain.User;
 import agritech.madaberia.service.UserService;
 
-@RestController("/user/")
+@RestController
+@RequestMapping("/user/")
 public class UserController {
     @Autowired
     UserService userService;
