@@ -24,6 +24,6 @@ public class Kebele {
     private Woreda woreda;
 
     @OneToMany
-    private List<Farmers> farmers;
+    private List<Farmer> farmers;
 
 }
