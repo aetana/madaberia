@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Farmers {
+public class Farmer {
     @Id
     private Long id;
     private String name;
