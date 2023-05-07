@@ -1,4 +1,4 @@
-package agritech.madaberia.model;
+package agritech.madaberia.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
