@@ -5,23 +5,28 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Region {
+public class Permission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    private String code;
 
-    @OneToMany(mappedBy = "region")
-    private List<Zone> zones;
+    @OneToOne
+    private User user;
 
-    @OneToMany(mappedBy = "region", cascade = CascadeType.ALL)
-    private List<Permission> permissions;
+    @ManyToOne
+    private Region region;
+
+    @ManyToOne
+    private Zone zone;
+
+    @ManyToOne
+    private Woreda woreda;
+
+    @ManyToOne
+    private Kebele kebele;
 
 }

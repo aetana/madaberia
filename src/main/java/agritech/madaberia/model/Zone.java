@@ -1,9 +1,6 @@
 package agritech.madaberia.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,6 +13,7 @@ import java.util.List;
 @Entity
 public class Zone {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String code;
@@ -24,7 +22,10 @@ public class Zone {
     private Region region;
 
     @OneToMany(mappedBy = "zone")
-    private List<Woreda> woredas;
+    private List<Woreda> woreda;
+
+    @OneToMany(mappedBy = "zone", cascade = CascadeType.ALL)
+    private List<Permission> permissions;
 }
 
 
