@@ -1,5 +1,6 @@
 package agritech.madaberia.model;
 
+import agritech.madaberia.model.enums.ProductType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,12 +13,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Farmer {
+public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String fingerPrint;
-    private String phoneNumber;
-    private String address;
+    private double size;
+    private double price;
+    private ProductType type;
 }
