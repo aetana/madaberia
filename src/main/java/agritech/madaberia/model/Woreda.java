@@ -1,9 +1,6 @@
 package agritech.madaberia.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,6 +21,6 @@ public class Woreda {
     @ManyToOne(optional = false)
     private Zone zone;
 
-    @ManyToMany(mappedBy = "woredas")
+    @OneToMany()
     private List<Kebele> kebeles;
 }
