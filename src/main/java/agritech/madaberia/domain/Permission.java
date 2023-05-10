@@ -1,5 +1,9 @@
 package agritech.madaberia.domain;
 
+import agritech.madaberia.model.Kebele;
+import agritech.madaberia.model.Region;
+import agritech.madaberia.model.Woreda;
+import agritech.madaberia.model.Zone;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

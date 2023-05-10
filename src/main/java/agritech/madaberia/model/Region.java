@@ -1,6 +1,8 @@
-package agritech.madaberia.domain;
+package agritech.madaberia.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,16 +13,12 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Woreda {
+public class Region {
     @Id
     private Long id;
     private String name;
     private String code;
 
-
-    @ManyToOne(optional = false)
-    private Zone zone;
-
-    @OneToMany()
-    private List<Kebele> kebeles;
+    @OneToMany(mappedBy = "region")
+    private List<Zone> zones;
 }
